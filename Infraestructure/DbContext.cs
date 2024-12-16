@@ -1,0 +1,58 @@
+using TestApp.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace TestApp.Infra
+{
+  public class LibraryDbContext : DbContext
+  {
+    public LibraryDbContext(DbContextOptions<LibraryDbContext> options) : base(options) { }
+
+    public DbSet<Author> Authors { get; set; }
+    public DbSet<Book> Books { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+      // TODO: Explicitar a relação entre Autor e Livros
+
+      base.OnModelCreating(modelBuilder);
+    }
+  }
+}
+
+
+// Exemplos de algumas relações:
+
+
+// Um para Um (one-to-one)
+
+/* modelBuilder.Entity<User>() */
+/*   .HasOne(u => u.Address) */
+/*   .WithOne(a => a.User) */
+/*   .HasForeignKey<Address>(a => a.UserId) */
+/*   .OnDelete(DeleteBehavior.Cascade); */
+
+
+// Um para Muitos (one-to-many)
+
+/* modelBuilder.Entity<Blog>() */
+/*     .HasMany(b => b.Posts) */
+/*     .WithOne(p => p.Blog) */
+/*     .HasForeignKey(p => p.BlogId) */
+/*     .OnDelete(DeleteBehavior.Cascade); */
+
+
+// Muitos para Um (many-to-one)
+
+/* modelBuilder.Entity<Post>() */
+/*     .HasOne(p => p.Blog) */
+/*     .WithMany(b => b.Posts) */
+/*     .HasForeignKey(p => p.BlogId) */
+/*     .OnDelete(DeleteBehavior.Cascade); */
+
+
+// Muitos para Muitos (many-to-many)
+
+/* modelBuilder.Entity<Student>() */
+/*     .HasMany(s => s.Courses) */
+/*     .WithMany(c => c.Students) */
+/*     .UsingEntity(j => j.ToTable("StudentCourses")); */
