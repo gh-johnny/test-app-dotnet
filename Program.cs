@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<LibraryDbContext>(options =>
+builder.Services.AddDbContext<TestAppDbContext>(options =>
     options.UseInMemoryDatabase("LibraryDb"));
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

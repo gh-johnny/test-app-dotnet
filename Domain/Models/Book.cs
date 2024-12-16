@@ -16,6 +16,9 @@
 //  01 : Implementar com as melhores práticas os atributos requisitados;
 //  02 : Seguir as melhores práticas do (EF Core) Entity Framework Core com *annotations* se necessário;
 
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace TestApp.Models
 {
     public class Book

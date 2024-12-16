@@ -3,16 +3,17 @@ using Microsoft.EntityFrameworkCore;
 
 namespace TestApp.Infra
 {
-  public class LibraryDbContext : DbContext
+  public class TestAppDbContext : DbContext
   {
-    public LibraryDbContext(DbContextOptions<LibraryDbContext> options) : base(options) { }
+    public TestAppDbContext(DbContextOptions<TestAppDbContext> options) : base(options) { }
 
     public DbSet<Author> Authors { get; set; }
     public DbSet<Book> Books { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-      // TODO: Explicitar a relação entre Autor e Livros
+      // TODO: Explicitar a relação entre Autor e Livros 
+      // OBS: Esse passo não necessário para funcionar se as anotações do EF Core já estiverem corretas
 
       base.OnModelCreating(modelBuilder);
     }
