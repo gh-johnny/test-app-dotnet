@@ -1,11 +1,3 @@
-// TODO: Implementar com êxito um CRUD do Autor com os métodos
-
-//    01   : Create (criar novo Autor)
-//    02   : Read (listar todos os Autores)
-// (Extra) : Update (sobescrever Autor específico)
-// (Extra) : Delete (deletar Autor específico)
-
-
 using TestApp.Models;
 using TestApp.Infra;
 using Microsoft.AspNetCore.Mvc;
@@ -17,22 +9,28 @@ namespace TestApp.Controllers
     [ApiController]
     public class BookController : ControllerBase
     {
-        private readonly LibraryDbContext _context;
+        private readonly TestAppDbContext _context;
 
-        public BookController(LibraryDbContext context)
+        public BookController(TestAppDbContext context)
         {
             _context = context;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Book>>> GetBooks()
+        public async Task<ActionResult<IEnumerable<Author>>> GetAllBooks()
         {
+            // TODO: Buscar livros no banco
+            return Ok(await _context.Books.ToListAsync());
         }
 
-        [HttpPost]
-        public async Task<ActionResult<Book>> CreateBook(Book book)
-        {
-        }
+        // TODO: Implementar POST /api/book para criar um novo Livro
+        // Certifique-se de que o AuthorId exista no banco.
+
+        // TODO: Implementar GET /api/book/{id} para listar todos os livros de 1 único Autor (já existente)
+
+        // TODO: (Extra) Implementar PUT /api/book/{id} para atualizar um Livro existente.
+
+        // TODO: (Extra) Implementar DELETE /api/book/{id} para deletar um Livro.
     }
 }
 

@@ -13,47 +13,46 @@ namespace TestApp.Infra
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
       // TODO: Explicitar a relação entre Autor e Livros 
-      // OBS: Esse passo não necessário para funcionar se as anotações do EF Core já estiverem corretas
+      // OBS: Se as anotações EF nos modelos já estiverem corretas, este passo não é necessário (mas recomendado de qualquer maneira)
+
+
+      // Exemplos de algumas relações:
+
+      // Um para Um (one-to-one)
+
+      /* modelBuilder.Entity<User>() */
+      /*   .HasOne(u => u.Address) */
+      /*   .WithOne(a => a.User) */
+      /*   .HasForeignKey<Address>(a => a.UserId) */
+      /*   .OnDelete(DeleteBehavior.Cascade); */
+
+
+      // Um para Muitos (one-to-many)
+
+      /* modelBuilder.Entity<Blog>() */
+      /*     .HasMany(b => b.Posts) */
+      /*     .WithOne(p => p.Blog) */
+      /*     .HasForeignKey(p => p.BlogId) */
+      /*     .OnDelete(DeleteBehavior.Cascade); */
+
+
+      // Muitos para Um (many-to-one)
+
+      /* modelBuilder.Entity<Post>() */
+      /*     .HasOne(p => p.Blog) */
+      /*     .WithMany(b => b.Posts) */
+      /*     .HasForeignKey(p => p.BlogId) */
+      /*     .OnDelete(DeleteBehavior.Cascade); */
+
+
+      // Muitos para Muitos (many-to-many)
+
+      /* modelBuilder.Entity<Student>() */
+      /*     .HasMany(s => s.Courses) */
+      /*     .WithMany(c => c.Students) */
+      /*     .UsingEntity(j => j.ToTable("StudentCourses")); */
 
       base.OnModelCreating(modelBuilder);
     }
   }
 }
-
-
-// Exemplos de algumas relações:
-
-
-// Um para Um (one-to-one)
-
-/* modelBuilder.Entity<User>() */
-/*   .HasOne(u => u.Address) */
-/*   .WithOne(a => a.User) */
-/*   .HasForeignKey<Address>(a => a.UserId) */
-/*   .OnDelete(DeleteBehavior.Cascade); */
-
-
-// Um para Muitos (one-to-many)
-
-/* modelBuilder.Entity<Blog>() */
-/*     .HasMany(b => b.Posts) */
-/*     .WithOne(p => p.Blog) */
-/*     .HasForeignKey(p => p.BlogId) */
-/*     .OnDelete(DeleteBehavior.Cascade); */
-
-
-// Muitos para Um (many-to-one)
-
-/* modelBuilder.Entity<Post>() */
-/*     .HasOne(p => p.Blog) */
-/*     .WithMany(b => b.Posts) */
-/*     .HasForeignKey(p => p.BlogId) */
-/*     .OnDelete(DeleteBehavior.Cascade); */
-
-
-// Muitos para Muitos (many-to-many)
-
-/* modelBuilder.Entity<Student>() */
-/*     .HasMany(s => s.Courses) */
-/*     .WithMany(c => c.Students) */
-/*     .UsingEntity(j => j.ToTable("StudentCourses")); */

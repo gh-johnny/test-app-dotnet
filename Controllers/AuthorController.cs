@@ -9,9 +9,9 @@ namespace TestApp.Controllers
     [Route("api/author")]
     public class AuthorController : ControllerBase
     {
-        private readonly LibraryDbContext _context;
+        private readonly TestAppDbContext _context;
 
-        public AuthorController(LibraryDbContext context)
+        public AuthorController(TestAppDbContext context)
         {
             _context = context;
         }
