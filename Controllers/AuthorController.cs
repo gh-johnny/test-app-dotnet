@@ -1,7 +1,5 @@
-using TestApp.Models;
 using TestApp.Infra;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace TestApp.Controllers
 {
@@ -16,13 +14,9 @@ namespace TestApp.Controllers
             _context = context;
         }
 
-        // Exemplo implementado: listar todos os autores com todos os seus livros
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Author>>> GetAuthorsWithBooks()
-        {
-            // TODO: Buscar autores no banco, incluindo os livros relacionados
-            /* return Ok(await _context.Authors.Include(a => a.Books).ToListAsync()); */
-        }
+        // TODO: Implementar método GET /api/author para buscar autores no banco
+
+        // TODO: Implementar método GET /api/author/{id} para buscar autor no banco com livros relacionados
 
         // TODO: Implementar método POST /api/author para criar um novo Autor
 
