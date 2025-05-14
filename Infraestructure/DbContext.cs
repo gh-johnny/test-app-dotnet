@@ -1,6 +1,14 @@
 using TestApp.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
+// ***** (Importante) ***********************************************************
+// **                                                                          **
+// *   Assuma que um livro pode conter apenas 1 autor e um autor vários livros  *
+// **                                                                          **
+// ***** (Importante) ***********************************************************
+//
+// OBS: Se as anotações EF nos modelos já estiverem corretas, este passo não é necessário
+
 namespace TestApp.Infra
 {
     public class TestAppDbContext : DbContext
@@ -8,12 +16,10 @@ namespace TestApp.Infra
         public TestAppDbContext(DbContextOptions<TestAppDbContext> options) : base(options) { }
 
         public DbSet<Author> Authors { get; set; }
-        /* public DbSet<Book> Books { get; set; } */
+        public DbSet<Book> Books { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // OBS: Se as anotações EF nos modelos já estiverem corretas, este passo não é necessário
-
             // Exemplos de algumas relações:
 
             // Um para Um (one-to-one)
@@ -21,7 +27,7 @@ namespace TestApp.Infra
             /* modelBuilder.Entity<User>() */
             /*   .HasOne(u => u.Address) */
             /*   .WithOne(a => a.User) */
-            /*   .HasForeignKey<Address>(a => a.UserId) */
+            /*   .HasForeignKey(a => a.UserId) */
             /*   .OnDelete(DeleteBehavior.Cascade); */
 
 

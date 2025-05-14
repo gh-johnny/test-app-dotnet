@@ -37,6 +37,9 @@ namespace TestApp.Infra.Repository
     {
       var updatedAuthor = _context.Authors
         .Update(author);
+
+      updatedAuthor.State = EntityState.Modified;
+
       await _context.SaveChangesAsync();
     }
 

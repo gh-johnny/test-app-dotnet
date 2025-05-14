@@ -1,4 +1,5 @@
 using TestApp.Domain.Models;
+
 namespace TestApp.Domain.Interfaces;
 
 public interface IAuthorRepository

@@ -8,6 +8,6 @@ namespace TestApp.Domain.Models
 
     public DateTime DataDeNascimento { get; set; }
 
-    /* public List<Book>? Books { get; set; } = null; */
+    public List<Book>? Books { get; set; } = null;
   }
 }
