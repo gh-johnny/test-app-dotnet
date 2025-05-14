@@ -1,7 +1,11 @@
 using TestApp.Infra;
+using TestApp.Infra.Repository;
+using TestApp.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();
 
 builder.Services.AddDbContext<TestAppDbContext>(options =>
     options.UseInMemoryDatabase("LibraryDb"));

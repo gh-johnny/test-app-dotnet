@@ -1,26 +1,13 @@
-//
-// Modelo Author (Autor)
-//
-// TODO: Adicione uma propriedade de chave primária Id (ex.: int Id)
-
-// TODO: Adicione uma propriedade obrigatória Nome (ex.: string Nome)
-// Adicione uma restrição de comprimento máximo, se necessário.
-
-// TODO: Adicione uma propriedade obrigatória DataDeNascimento (DateTime)
-
-// TODO: Adicione uma propriedade de navegação para uma lista de livros
-// ex.: List<Book> Books
-
-// Pontos a ser avaliados
-//  01 : Implementar com as melhores práticas os atributos individuais e de relação requisitados;
-//  02 : Seguir as melhores práticas do (EF Core) Entity Framework Core com *annotations* se necessário;
-
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace TestApp.Models
+namespace TestApp.Domain.Models
 {
-    public class Author
-    {
-    }
+  public class Author
+  {
+    public Guid Id { get; set; }
+
+    public string Nome { get; set; } = string.Empty;
+
+    public DateTime DataDeNascimento { get; set; }
+
+    /* public List<Book>? Books { get; set; } = null; */
+  }
 }

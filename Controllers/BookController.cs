@@ -1,7 +1,6 @@
-using TestApp.Models;
 using TestApp.Infra;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+/* using Microsoft.EntityFrameworkCore; */
 
 namespace TestApp.Controllers
 {
@@ -16,9 +15,9 @@ namespace TestApp.Controllers
             _context = context;
         }
 
-        // TODO: Implementar POST /api/book para criar um novo Livro
+        // TODO: Implementar POST /api/book para criar um novo Livro (com Autor existente)
 
-        // TODO: Implementar GET /api/book/ para listar todos os livros
+        // TODO: Implementar GET /api/book/ para listar todos os livros (Com respectivo Autor)
 
         // TODO: (Extra) Implementar PUT /api/book/{id} para atualizar um Livro existente.
 

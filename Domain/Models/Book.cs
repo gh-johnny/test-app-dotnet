@@ -12,16 +12,19 @@
 
 // TODO: Adicione uma propriedade de navegação para Author
 
-// Pontos a ser avaliados
-//  01 : Implementar com as melhores práticas os atributos requisitados;
-//  02 : Seguir as melhores práticas do (EF Core) Entity Framework Core com *annotations* se necessário;
+//  Objetivo: Implementar com as melhores práticas os atributos requisitados
+//
 
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+// Para annotations se preferível...
+//
+/* using System.ComponentModel.DataAnnotations; */
+/* using System.ComponentModel.DataAnnotations.Schema; */
+/*  */
 
-namespace TestApp.Models
-{
-    public class Book
-    {
-    }
-}
+
+/* namespace TestApp.Domain.Models */
+/* { */
+/*     public class Book */
+/*     { */
+/*     } */
+/* } */
